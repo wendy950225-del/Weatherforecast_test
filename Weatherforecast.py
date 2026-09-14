@@ -75,7 +75,7 @@ def main():
     print(f"今日最高降雨機率：{rain_probability}%")
     print(f"通知門檻：{threshold}%")
 
-    if rain_probability > threshold or force_notify:
+    if rain_probability >= threshold or force_notify:
 
         if force_notify:
             message = (
