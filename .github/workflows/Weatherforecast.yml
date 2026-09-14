@@ -19,18 +19,18 @@ jobs:
 
     steps:
       - name: 下載程式
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: 安裝 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
-      - name: 安裝 Python 套件
-        run: pip install -r requirements.txt
+      - name: 安裝 requests
+        run: pip install requests
 
       - name: 檢查今天降雨機率
-        run: python weather_alert.py
+        run: python Weatherforecast.py
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
